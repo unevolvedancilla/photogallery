@@ -1,0 +1,126 @@
+body {
+    font-family: cormorant, serif;
+}
+h1 {
+    /* not be block */
+    display: inline-block;
+    font-weight: 300;
+    /* removes default top/bottom margin, and adds space on the right side to push away the links list */
+    margin: 0 32px 0 0;
+}
+.navbar {
+    /* style the header */
+    margin: 32px;
+}
+.links ul {
+    /* this will get rid of the default padding and gives us a clean slate to plan out the header spacing */
+    padding: 0;
+}
+.links {
+    /* places the link list to the right of h1 instead of underneath h1 */
+    display: inline-block;
+}
+.links li {
+    /* makes the link list horizontal, instead of default vertical list */
+    display: inline-block;
+}
+
+.links a {
+    font-size: 20px;
+    color: black;
+    /* remove default underline */
+    text-decoration: none;
+    /* add space between the list items */
+    margin: 0 8px;
+}
+a.active {
+    /* add a underline to the 'Work' link using the border property */
+    border-bottom: 1px solid black;
+}
+
+.gallery {
+    /* adds white spacing on all sides of the page, WITHOUT affecting the spacing between individual cards */
+    padding: 16px;
+}
+.card {
+    /* prevents wrapping. each card takes up 49% of the body. don't do 50% because white space between the <div>s will cause each card to move to its own line. */
+    width: 49.75%;
+    /* allows two cards in a row instead of causing each image to move to its own line */
+    display: inline-block;
+    /* first we set boxing-sizing, which will enable us to add white space between cards with padding. the content box gets shrunk absorb the padding, preventing each card from moving onto a new line. without box-sizing, the padding will push each card to its own line.  */
+    box-sizing: border-box;
+    padding: 16px;
+
+}
+.card img {
+    /* make all images the same height */
+    height: 500px;
+    /* this confines the images to stay within the cards. otherwise, the images are overflowing beyond the card. */
+    width: 100%;
+    /* this enabling clipping: the image maintains its aspect ratio when the screen is re-sized, instead of being squashed. */
+    object-fit: cover;
+}
+.card img:hover {
+    opacity: 0.9;
+}
+.card h2 {
+    /* instead of using default bold, make the font a little thinner */
+    font-weight: 300;
+    display: inline-block;
+    /* adding a little white space between caption and image above, and also between caption and image below */
+    margin: 8px 0 16px 0;
+}
+
+
+.about {
+    width: 40%;
+    /* prevents the contact paragraph from getting pushed down multiple lines */
+    min-width: 600px;
+    margin: 100px 0 100px 200px;
+}
+
+.about h3 {
+    font-size: 40px;
+    font-weight: 300px;
+}
+
+.contact {
+    margin-top: 100px;
+}
+
+.contact p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.cta {
+    border-bottom: 1px solid black;
+    /* stops the bottom border from going across the entire block */
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card {
+        width: 100%;
+    }
+    .about {
+        margin: 100px 0px 100px 100px;
+
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .card {
+        padding: 0;
+    }
+    .gallery {
+        padding: 8px;
+    }
+    .about {
+        margin: 100px auto;
+        min-width: 450px;
+    }
+}
+
